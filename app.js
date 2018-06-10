@@ -4,8 +4,7 @@
 const app = require('express')()
 
 // fake posts to simulate database
-const posts = [
-    {
+const posts = [{
         id: 1,
         author: 'John',
         title: 'Templating with EJS',
@@ -15,13 +14,13 @@ const posts = [
         id: 2,
         author: 'Drake',
         title: 'Express: Starting from the Bottom',
-        body: 'Blog post number 2'   
+        body: 'Blog post number 2'
     },
     {
         id: 3,
         author: 'Emma',
         title: 'Streams',
-        body: 'Blog post number 3' 
+        body: 'Blog post number 3'
     },
     {
         id: 4,
@@ -37,7 +36,9 @@ app.set('view engine', 'ejs')
 // blog home page
 app.get('/', (req, res) => {
     //render `home.ejs ` with the list of posts
-    res.render('home', {posts: posts})
+    res.render('home', {
+        posts: posts
+    })
 })
 
 // blog post
